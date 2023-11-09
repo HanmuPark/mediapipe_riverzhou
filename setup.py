@@ -201,7 +201,8 @@ class GeneratePyProtos(build_ext.build_ext):
       protoc_command = [
           self._protoc, '-I.',
           '--experimental_allow_proto3_optional',
-          '--python_out=' + os.path.abspath(self.build_lib), source
+          '--python_out=' + os.path.abspath(self.build_lib), source,
+          '--experimental_allow_proto3_optional'
       ]
       if subprocess.call(protoc_command) != 0:
         sys.exit(-1)
